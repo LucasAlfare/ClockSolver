@@ -3,13 +3,12 @@ package solver_kotlin
 import java.util.*
 import kotlin.collections.ArrayList
 
-//TODO: implementar contrutor padrao
-class Clock {
+class Clock() {
 
     var relogios: ArrayList<Int>
     var pinos: ArrayList<Boolean>
 
-    constructor() {
+    init {
         relogios = arrayListOf(
                 0, 0, 0,
                 0, 0, 0,
@@ -19,16 +18,10 @@ class Clock {
                 0, 0, 0,
                 0, 0, 0
         )
-
         pinos = arrayListOf(
                 false, false,
                 false, false
         )
-    }
-
-    constructor(relogios: ArrayList<Int>, pinos: ArrayList<Boolean>) {
-        this.relogios = relogios
-        this.pinos = pinos
     }
 
     fun girar(quantidade: Int){

@@ -22,8 +22,16 @@ public class Clock {
     public Clock() {
         pinos = new boolean[4];
         Arrays.fill(pinos, false);
-        relogios = new int[18];
-        Arrays.fill(relogios, 0);
+        relogios = new int[]{
+                1, 2, 3,
+                0, 0, 0,
+                0, 0, 0,
+
+                4, 5, 6,
+                0, 0, 0,
+                0, 0, 0
+        };
+        //Arrays.fill(relogios, 0);
     }
 
     public Clock(int[] relogios, boolean[] pinos) {

@@ -1,11 +1,16 @@
 package solver_java;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
+        inverter();
+
+        /*
         ArrayList<Integer> q = new ArrayList<>();
         for (int k = 0; k < 5; k++) {
             long i = System.currentTimeMillis();
@@ -36,5 +41,19 @@ public class Main {
             s += v;
         }
         System.out.println("Avg: " + s / q.size());
+         */
+    }
+
+    static ArrayList<Integer> lista = new ArrayList<>(Arrays.asList(1, 2, 30, 40));
+    public static void inverter(){
+        System.out.println(lista);
+        int metade = lista.size() / 2;
+        List<Integer> tmp = lista.subList(0, metade);
+        for (int i = 0; i < metade; i++) {
+            lista.set(i, lista.get(i + metade));
+            lista.set(i + metade, tmp.get(i));
+            System.out.println("tmp:" + tmp);
+        }
+        System.out.println(lista);
     }
 }

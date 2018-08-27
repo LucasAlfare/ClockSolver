@@ -1,21 +1,16 @@
 package solver_kotlin
 
+import java.util.*
+import kotlin.collections.ArrayList
+
+//TODO: implementar contrutor padrao
 class Clock {
 
-    var relogios: MutableList<Int>
-    var pinos: MutableList<Boolean>
-
-    companion object {
-        val INDICES_NO_PINO = mutableListOf(
-                mutableListOf(0, 1, 3, 4, 11),
-                mutableListOf(1, 2, 4, 5, 9),
-                mutableListOf(3, 4, 6, 7, 17),
-                mutableListOf(4, 5, 7, 8, 15)
-        )
-    }
+    var relogios: ArrayList<Int>
+    var pinos: ArrayList<Boolean>
 
     constructor() {
-        relogios = mutableListOf(
+        relogios = arrayListOf(
                 0, 0, 0,
                 0, 0, 0,
                 0, 0, 0,
@@ -25,19 +20,32 @@ class Clock {
                 0, 0, 0
         )
 
-        pinos = mutableListOf(
+        pinos = arrayListOf(
                 false, false,
                 false, false
         )
     }
 
-    constructor(relogios: MutableList<Int>, pinos: MutableList<Boolean>) {
+    constructor(relogios: ArrayList<Int>, pinos: ArrayList<Boolean>) {
         this.relogios = relogios
         this.pinos = pinos
     }
 
-    fun indicesAfetados(): MutableList<Int> {
-        val a = mutableListOf<Int>()
+    fun girar(quantidade: Int){
+        for (r in indicesAfetados()){
+            girarRelogio(r, quantidade * (if (r > 8) -1 else 1))
+        }
+    }
+
+    fun girarRelogio(indice: Int, movimento: Int){
+        for (i in 0..(if (movimento > 0) movimento else (12 - (movimento * -1)))){
+            relogios[indice]++
+            if (relogios[indice] == 12) relogios[indice] = 0
+        }
+    }
+
+    fun indicesAfetados(): ArrayList<Int> {
+        val a = arrayListOf<Int>()
         for (i in 0..(pinos.size - 1)){
             if (pinos[i]){
                 for (j in INDICES_NO_PINO[i]){
@@ -53,6 +61,33 @@ class Clock {
 
     fun pressionarPino(pino: Int){
         pinos[pino] = !pinos[pino]
+    }
+
+    fun y2(){
+        val tmp = ArrayList(relogios.subList(0, 9))
+        for (i in (0 until 9)){
+            relogios[i] = relogios[i+9]
+            relogios[i+9] = tmp[i]
+        }
+    }
+
+    companion object {
+        private val INDICES_NO_PINO = arrayListOf(
+                arrayListOf(0, 1, 3, 4, 11),
+                arrayListOf(1, 2, 4, 5, 9),
+                arrayListOf(3, 4, 6, 7, 17),
+                arrayListOf(4, 5, 7, 8, 15)
+        )
+
+        fun randomClock() : Clock {
+            val c = Clock()
+            val r = Random()
+            for (i in (0 until c.relogios.size)){
+                c.relogios[i] = r.nextInt(12)
+            }
+
+            return c
+        }
     }
 
     override fun toString(): String {

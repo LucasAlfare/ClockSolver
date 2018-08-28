@@ -11,10 +11,7 @@ object SolverBasico {
     @JvmStatic
     val ORDEM_ALVOS = arrayListOf(
             //cruz frente
-            1,
-            3,
-            7,
-            5,
+            1, 3, 7, 5,
 
             //all
             0,
@@ -22,16 +19,10 @@ object SolverBasico {
             /*y2*/
 
             //cruz traseira
-            1,
-            3,
-            7,
-            5,
+            1, 3, 7, 5,
 
             //cantos traseira
-            0,
-            2,
-            6,
-            8,
+            0, 2, 6, 8,
 
             //all
             0

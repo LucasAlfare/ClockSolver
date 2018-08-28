@@ -1,14 +1,19 @@
+/*
+ * Copyright (c) 2018. Criado por @Lucas Sousa
+ */
+
 package solver_java;
+
+import solverKotlin.SolverBasico;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
-        inverter();
+        System.out.println(SolverBasico.getORDEM_ALVOS());
 
         /*
         ArrayList<Integer> q = new ArrayList<>();

@@ -1,9 +1,13 @@
-package solver_kotlin
+/*
+ * Copyright (c) 2018. Criado por @Lucas Sousa
+ */
+
+package solverKotlin
 
 import java.util.*
 import kotlin.collections.ArrayList
 
-class Clock() {
+class Clock {
 
     var relogios: ArrayList<Int>
     var pinos: ArrayList<Boolean>

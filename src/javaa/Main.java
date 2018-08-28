@@ -2,9 +2,9 @@
  * Copyright (c) 2018. Criado por @Lucas Sousa
  */
 
-package solver_java;
+package javaa;
 
-import solverKotlin.SolverBasico;
+import kotlinn.SolverBasico;
 
 import java.util.ArrayList;
 import java.util.Arrays;

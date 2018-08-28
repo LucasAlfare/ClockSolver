@@ -2,7 +2,7 @@
  * Copyright (c) 2018. Criado por @Lucas Sousa
  */
 
-package solver_java;
+package javaa;
 
 import java.util.*;
 

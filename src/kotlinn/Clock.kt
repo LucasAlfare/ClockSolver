@@ -2,7 +2,7 @@
  * Copyright (c) 2018. Criado por @Lucas Sousa
  */
 
-package solverKotlin
+package kotlinn
 
 import java.util.*
 import kotlin.collections.ArrayList

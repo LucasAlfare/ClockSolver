@@ -4,7 +4,6 @@
 
 package solverKotlin
 
-import java.util.*
 import kotlin.collections.ArrayList
 
 object SolverBasico {

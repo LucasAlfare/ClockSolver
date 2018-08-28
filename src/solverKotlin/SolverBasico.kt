@@ -94,6 +94,7 @@ object SolverBasico {
         }
     }
 
+    @JvmStatic
     fun randomState(): String {
         val solveReversa = ArrayList(MOVIMENTOS_SOLVE.reversed())
         val mReversos = ArrayList(MOVIMENTOS.reversed())
